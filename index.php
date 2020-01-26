@@ -1,26 +1,26 @@
-﻿							<!-- Форма авторизации -->
+﻿<!-- Форма авторизации -->
 
 <?php
 	session_start();
 	echo "
 		<!DOCTYPE html>
-			<html lang='en'>
-				<head>
-					<meta charset='UTF-8'>
-					<meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
-					<title>Форма входа на PHP</title>
-					<link rel='stylesheet' href='https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css'>
-					<link rel='stylesheet' href='css/bootstrap.min.css'>
-					<link rel='stylesheet' href='css/styles.css'>
-				</head>
-				<body>"?>
+		<html lang='ru'>
+			<head>
+				<meta charset='UTF-8'>
+				<meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
+				<title>Форма входа на PHP</title>
+				<link rel='stylesheet' href='https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css'>
+				<link rel='stylesheet' href='css/bootstrap.min.css'>
+				<link rel='stylesheet' href='css/styles.css'>
+			</head>
+			<body>"?>
 <?php
-	if(isset($_SESSION['login'])){
+	if(isset($_SESSION['login'])) {
 		$login='Здравствуйте, '.$_SESSION['login'].'!';
 	}
 // Проверяем, пусты ли переменные логина и id пользователя
-	if (empty($_SESSION['login']) or empty($_SESSION['id'])){
- // Если пусты, то
+// Если пусты, то
+	if (empty($_SESSION['login']) || empty($_SESSION['id'])) {
 		echo "<div class='alert alert-primary center' role='alert'>Вы вошли на сайт, как гость</div><br>
 			<div class='container'>
 				<div class='row'>
@@ -52,19 +52,19 @@
 				</div>
 			</div>";
 	}
+// Если не пусты, то 
 	else {
- // Если не пусты, то 
 		echo "<br /><br />Вы вошли на сайт, как ".$_SESSION['login']."<br /><br />";
 		echo "<form action='close.php' method='POST'>
-					<button type='submit' class='btn btn-primary'>Отправить</button>
-				</form>";
+				<button type='submit' class='btn btn-primary'>Отправить</button>
+			</form>";
 	}
 	echo'
-				<script src="https://unpkg.com/popper.js/dist/umd/popper.min.js"></script>
-				<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-				<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-				<script src="js/bootstrap.min.js"></script>
-				<script src="js/main.js"></script>
-			</body>
-		</html>'; 
+		<script src="https://unpkg.com/popper.js/dist/umd/popper.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/main.js"></script>
+		</body>
+		</html>';
 ?>
